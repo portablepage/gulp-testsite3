@@ -36,7 +36,7 @@
 	
 	{% for item in posts %}
 		
-	<section id="{{item.id}}" class="repeat" data-layout="{{item.layout}}">
+	<section id="{{item.id}}" class="post" data-layout="{{item.layout}}">
   		
 		{% include 'layouts/' ~ item.layout ~ '.html' %}
 		
