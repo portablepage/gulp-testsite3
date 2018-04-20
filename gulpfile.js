@@ -16,7 +16,7 @@ gulp.task('compile', function () { // second param makes the task depend on to-j
 					
 			
 					
-					var data = JSON.parse(fs.readFileSync('./data/' + path.basename(file.path) + '.json'));
+					var data = JSON.parse(fs.readFileSync('./data/' + file.path));
 			
 					console.log(data);
 					var dataArr = Object.values(data); // convert object to array
