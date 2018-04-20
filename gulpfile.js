@@ -6,42 +6,35 @@ var path = require('path');
 
 gulp.task('compile', function () { // second param makes the task depend on to-json
 	
-
-	
-		gulp.src('./data/*.json')
+	gulp.src('./data/*.json')
 			  	
-		.pipe(data(function(file) { 
+	.pipe(data(function(file) { 
 			
+		var data = JSON.parse(fs.readFileSync('./data/' + path.basename(file.path)));
+		var dataArr = Object.values(data); // convert object to array
+		var newdata = {}; // creating array key for posts
+		newdata['posts'] = dataArr;
+		return newdata;
+		//return new Buffer(JSON.stringify(newdata));
+		
+	}))
 			
-			var data = JSON.parse(fs.readFileSync('./data/' + path.basename(file.path)));
-			
-			
-			var dataArr = Object.values(data); // convert object to array
-					
-		  	var newdata = {}; // creating array key for posts
-		  	newdata['posts'] = dataArr; // order descending
-			
-			console.log(newdata);
-			
-			return newdata;
-				
-		      	//return new Buffer(JSON.stringify(newdata));
-		}))
-			
-		// .pipe(gulp.dest('./api/')) // this generates the api 
-		.pipe(twig('./index.html', {dataSource: 'data'}))
-		.pipe(gulp.dest('site')); // this generates the pages
+	// .pipe(gulp.dest('./api/')) // this generates the api 
+	.pipe(twig('./index.html', {dataSource: 'data'}))
+	.pipe(gulp.dest('site')); // this generates the pages
 	
-	
- 
 });
 
 
 gulp.task('copy-assets', function () {
 	
-	    return gulp.src(['./assets/**/*']).pipe(gulp.dest('./site/assets'));
-	
+	return gulp.src(['./assets/**/*']).pipe(gulp.dest('./site/assets'));
 });
 
-gulp.task('default', ['compile', 'copy-assets']);
+gulp.task('copy-admin', function () {
+	
+	return gulp.src(['./admin']).pipe(gulp.dest('./site/admin'));
+});
+
+gulp.task('default', ['compile', 'copy-assets', 'copy-admin']);
 
