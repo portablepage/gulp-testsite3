@@ -16,8 +16,10 @@ gulp.task('compile', function () { // second param makes the task depend on to-j
 					
 		  			var newdata = {}; // creating array key for posts
 		  			newdata['posts'] = dataArr.reverse(); // order descending
-					newdata['site'] = require(configPath+'site.json');
-					newdata['pages'] = require(configPath+'pages.json');
+					/*
+					newdata['site'] = require('config/site.json');
+					newdata['pages'] = require('config/pages.json');
+					*/
 		      			return new Buffer(JSON.stringify(newdata));
 		}))
 			
