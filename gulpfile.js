@@ -13,22 +13,17 @@ gulp.task('compile', function () { // second param makes the task depend on to-j
 		.pipe(data(function(file) { 
 			
 			
-					
+			var data = JSON.parse(fs.readFileSync('./data/' + path.basename(file.path)));
 			
-					
-					var data = JSON.parse(fs.readFileSync('./data/' + path.basename(file.path)));
 			
-					console.log(data);
-					var dataArr = Object.values(data); // convert object to array
+			var dataArr = Object.values(data); // convert object to array
 					
-		  			var newdata = {}; // creating array key for posts
-		  			newdata['posts'] = dataArr.reverse(); // order descending
-					/*
-					newdata['site'] = require('config/site.json');
-					newdata['pages'] = require('config/pages.json');
-					*/
-					
-		      			return new Buffer(JSON.stringify(newdata));
+		  	var newdata = {}; // creating array key for posts
+		  	newdata['posts'] = dataArr.reverse(); // order descending
+			
+			console.log(newdata);
+				
+		      	return new Buffer(JSON.stringify(newdata));
 		}))
 			
 		// .pipe(gulp.dest('./api/')) // this generates the api 
