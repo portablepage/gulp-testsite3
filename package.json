@@ -2,11 +2,6 @@
  "dependencies": {
   "gulp": "latest",
   "gulp-twig-pipe": "latest",
-  "gulp-jsoncombine": "latest",
-  "gulp-marked-json": "latest",
-  "run-sequence": "latest",
-  "gulp-rename": "latest",
-  "fs": "latest",
-  "path": "latest"
+  "gulp-data": "latest"
  }
 }
