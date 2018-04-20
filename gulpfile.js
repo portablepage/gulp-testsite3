@@ -12,9 +12,13 @@ gulp.task('compile', function () { // second param makes the task depend on to-j
 			  	
 		.pipe(data(function(file) { 
 			
-			console.log(file);
+			
 					
-					var dataArr = Object.values(file); // convert object to array
+			
+					var data = obtainData(file);
+			
+					console.log(data);
+					var dataArr = Object.values(data); // convert object to array
 					
 		  			var newdata = {}; // creating array key for posts
 		  			newdata['posts'] = dataArr.reverse(); // order descending
