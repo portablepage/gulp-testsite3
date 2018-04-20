@@ -19,7 +19,7 @@ gulp.task('compile', function () { // second param makes the task depend on to-j
 			var dataArr = Object.values(data); // convert object to array
 					
 		  	var newdata = {}; // creating array key for posts
-		  	// newdata['posts'] = dataArr.reverse(); // order descending
+		  	newdata['posts'] = dataArr; // order descending
 			
 			console.log(newdata);
 			
