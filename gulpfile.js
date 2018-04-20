@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var twig = require('gulp-twig-pipe');
 var data = require('gulp-data');
 var fs = require('fs');
-
+var path = require('path');
 
 gulp.task('compile', function () { // second param makes the task depend on to-json
 	
@@ -16,7 +16,7 @@ gulp.task('compile', function () { // second param makes the task depend on to-j
 					
 			
 					
-					var data = JSON.parse(fs.readFileSync('./data/' + file.path));
+					var data = JSON.parse(fs.readFileSync('./data/' + path.basename(file.path) + '.json'));
 			
 					console.log(data);
 					var dataArr = Object.values(data); // convert object to array
