@@ -11,6 +11,8 @@ gulp.task('compile', function () { // second param makes the task depend on to-j
 		gulp.src('./data/*.json')
 			  	
 		.pipe(data(function(file) { 
+			
+			console.log(file);
 					
 					var dataArr = Object.values(file); // convert object to array
 					
@@ -20,7 +22,7 @@ gulp.task('compile', function () { // second param makes the task depend on to-j
 					newdata['site'] = require('config/site.json');
 					newdata['pages'] = require('config/pages.json');
 					*/
-					console.log(newdata);
+					
 		      			return new Buffer(JSON.stringify(newdata));
 		}))
 			
