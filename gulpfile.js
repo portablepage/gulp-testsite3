@@ -22,12 +22,14 @@ gulp.task('compile', function () { // second param makes the task depend on to-j
 		  	newdata['posts'] = dataArr.reverse(); // order descending
 			
 			console.log(newdata);
+			
+			return newdata;
 				
-		      	return new Buffer(JSON.stringify(newdata));
+		      	//return new Buffer(JSON.stringify(newdata));
 		}))
 			
 		// .pipe(gulp.dest('./api/')) // this generates the api 
-		.pipe(twig('./index.html'))
+		.pipe(twig('./index.html', {dataSource: 'data'}))
 		.pipe(gulp.dest('site')); // this generates the pages
 	
 	
