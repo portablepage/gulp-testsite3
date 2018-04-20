@@ -1,0 +1,11 @@
+<div class="container">
+  <h2 class="edit _title">{{item.title|default('Lorem ipsum')}}</h2>
+  <div class="edit _body">{{item.body}}</div>
+	
+	<div class="edit _images">
+  	{% for img in item.images %}
+	<img src="{{url}}img/{{img}}" />
+	{% endfor %}
+	</div>
+	
+</div>
