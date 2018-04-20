@@ -33,7 +33,7 @@ gulp.task('copy-assets', function () {
 
 gulp.task('copy-admin', function () {
 	
-	return gulp.src(['./admin']).pipe(gulp.dest('./site/admin'));
+	return gulp.src(['./admin/index.html']).pipe(gulp.dest('./site/admin/index.html'));
 });
 
 gulp.task('default', ['compile', 'copy-assets', 'copy-admin']);
