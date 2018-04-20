@@ -2,6 +2,7 @@
  "dependencies": {
   "gulp": "latest",
   "gulp-twig-pipe": "latest",
-  "gulp-data": "latest"
+  "gulp-data": "latest",
+  "fs": "latest"
  }
 }
