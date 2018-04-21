@@ -34,12 +34,12 @@ gulp.task('compile', function () { // second param makes the task depend on to-j
 
 gulp.task('copy-assets', function () {
 	
-	return gulp.src(['./assets/**/*']).pipe(gulp.dest('./site/assets'));
+	return gulp.src(['./template/assets/**/*']).pipe(gulp.dest('./site/assets'));
 });
 
 gulp.task('copy-admin', function () {
 	
-	return gulp.src(['./admin/*']).pipe(gulp.dest('./site/admin'));
+	// return gulp.src(['./admin/*']).pipe(gulp.dest('./site/admin'));
 });
 
 gulp.task('default', ['compile', 'copy-assets', 'copy-admin']);
