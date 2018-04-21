@@ -14,6 +14,12 @@ gulp.task('compile', function () { // second param makes the task depend on to-j
 		var dataArr = Object.values(data); // convert object to array
 		var newdata = {}; // creating array key for posts
 		newdata['posts'] = dataArr;
+		
+		// get menu
+		var pages = JSON.parse(fs.readFileSync('./config/pages.json'));
+		newdata['pages'] = pages;
+		
+		
 		return newdata;
 		//return new Buffer(JSON.stringify(newdata));
 		
