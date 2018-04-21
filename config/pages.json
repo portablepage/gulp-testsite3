@@ -10,5 +10,9 @@
     {
         "title": "About",
         "url": "about"
+    },
+    {
+        "title": "New Page",
+        "url": "new-page"
     }
 ]
