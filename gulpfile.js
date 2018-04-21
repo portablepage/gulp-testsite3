@@ -6,17 +6,17 @@ var path = require('path');
 
 gulp.task('compile', function () { // second param makes the task depend on to-json
 	
-	gulp.src('./data/*.json')
+	gulp.src('./content/pages/*.json')
 			  	
 	.pipe(data(function(file) { 
 			
-		var data = JSON.parse(fs.readFileSync('./data/' + path.basename(file.path)));
+		var data = JSON.parse(fs.readFileSync('./content/pages/' + path.basename(file.path)));
 		var dataArr = Object.values(data); // convert object to array
 		var newdata = {}; // creating array key for posts
 		newdata['posts'] = dataArr;
 		
 		// get menu
-		var pages = JSON.parse(fs.readFileSync('./config/pages.json'));
+		var pages = JSON.parse(fs.readFileSync('./content/config/pages.json'));
 		newdata['pages'] = pages;
 		
 		
