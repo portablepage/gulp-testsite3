@@ -1,14 +1,14 @@
 [
     {
         "title": "Home",
-        "url": "index.html"
+        "url": "index"
     },
     {
         "title": "Contact",
-        "url": "contact.html"
+        "url": "contact"
     },
     {
         "title": "About",
-        "url": "about.html"
+        "url": "about"
     }
 ]
