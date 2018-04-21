@@ -26,7 +26,7 @@ gulp.task('compile', function () { // second param makes the task depend on to-j
 	}))
 			
 	// .pipe(gulp.dest('./api/')) // this generates the api 
-	.pipe(twig('./index.html', {dataSource: 'data'}))
+	.pipe(twig('./template/index.html', {dataSource: 'data'}))
 	.pipe(gulp.dest('site')); // this generates the pages
 	
 });
